@@ -1,0 +1,233 @@
+# Git Commands: Complete Reference for Developers
+
+## 1. BASIC CONFIGURATION
+
+### Configuring User Information
+```bash
+# Set global user name
+git config --global user.name "Your Full Name"
+
+# Set global email address
+git config --global user.email "your.email@example.com"
+
+# Verify current configuration
+git config --list
+
+# Edit global configuration
+git config --global --edit
+```
+
+## 2. REPOSITORY INITIALIZATION
+
+### Creating New Repositories
+```bash
+# Initialize a new Git repository
+git init
+
+# Initialize a new repository with a specific directory name
+git init [project-name]
+
+# Clone an existing repository
+git clone [repository-url]
+
+# Clone a repository to a specific directory
+git clone [repository-url] [directory]
+
+# Clone a specific branch
+git clone -b [branch-name] [repository-url]
+```
+
+## 3. BASIC SNAPSHOTTING
+
+### Adding and Committing Changes
+```bash
+# Add a single file to staging area
+git add [file-name]
+
+# Add all changed files to staging area
+git add .
+
+# Add all files in a specific directory
+git add [directory-path]
+
+# Commit staged changes with a message
+git commit -m "Commit message describing changes"
+
+# Commit all modified and deleted files
+git commit -a -m "Commit message"
+
+# Amend the most recent commit
+git commit --amend
+
+# Amend commit with new message
+git commit --amend -m "New commit message"
+```
+
+## 4. BRANCHING AND MERGING
+
+### Branch Management
+```bash
+# List all local branches
+git branch
+
+# List all remote and local branches
+git branch -a
+
+# Create a new branch
+git branch [branch-name]
+
+# Switch to an existing branch
+git checkout [branch-name]
+
+# Create and switch to a new branch
+git checkout -b [branch-name]
+
+# Delete a branch
+git branch -d [branch-name]
+
+# Force delete a branch
+git branch -D [branch-name]
+
+# Merge a branch into current branch
+git merge [branch-name]
+
+# Rebase current branch onto another branch
+git rebase [branch-name]
+```
+
+## 5. REMOTE REPOSITORY OPERATIONS
+
+### Working with Remote Repositories
+```bash
+# Add a remote repository
+git remote add [remote-name] [repository-url]
+
+# View all configured remote repositories
+git remote -v
+
+# Fetch changes from remote repository
+git fetch [remote-name]
+
+# Pull changes from remote branch
+git pull [remote-name] [branch-name]
+
+# Push changes to remote repository
+git push [remote-name] [branch-name]
+
+# Push and set upstream branch
+git push -u [remote-name] [branch-name]
+
+# Remove a remote repository
+git remote remove [remote-name]
+```
+
+## 6. INSPECTION AND COMPARISON
+
+### Checking Repository Status
+```bash
+# Show status of changes
+git status
+
+# Show differences between working directory and staging area
+git diff
+
+# Show differences between staged changes and last commit
+git diff --staged
+
+# View commit history
+git log
+
+# View commit history with detailed changes
+git log -p
+
+# View compressed commit history
+git log --oneline
+
+# Show who changed what and when in a file
+git blame [file-name]
+```
+
+## 7. UNDOING CHANGES
+
+### Reverting and Resetting
+```bash
+# Unstage a file while keeping changes
+git reset [file-name]
+
+# Discard changes in working directory
+git checkout -- [file-name]
+
+# Revert a commit by creating a new commit
+git revert [commit-hash]
+
+# Reset to a previous commit, keeping changes
+git reset --soft [commit-hash]
+
+# Reset to a previous commit, discarding changes
+git reset --hard [commit-hash]
+```
+
+## 8. ADVANCED OPERATIONS
+
+### Stashing and Cleaning
+```bash
+# Stash current changes
+git stash
+
+# List all stashed changes
+git stash list
+
+# Apply the most recent stash
+git stash apply
+
+# Apply a specific stash
+git stash apply stash@{n}
+
+# Remove all untracked files
+git clean -f
+
+# Remove untracked directories
+git clean -fd
+```
+
+## 9. COLLABORATION AND WORKFLOW
+
+### Pull Requests and Collaboration
+```bash
+# Create a patch file
+git format-patch [branch-name]
+
+# Apply a patch
+git apply [patch-file]
+
+# Create a new branch from a specific commit
+git checkout -b [new-branch] [commit-hash]
+
+# Tag a specific commit
+git tag [tag-name] [commit-hash]
+
+# Create an annotated tag
+git tag -a [tag-name] -m "Tag message"
+```
+
+## 10. TROUBLESHOOTING AND HELP
+
+### Getting Help
+```bash
+# Get help for a specific Git command
+git help [command]
+
+# Brief help for a command
+git [command] -h
+
+# Show Git version
+git --version
+```
+
+## Best Practices
+1. Commit often
+2. Write descriptive commit messages
+3. Use feature branches
+4. Pull before pushing
+5. Review changes before committing
+```
